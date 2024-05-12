@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F96CC7032BF10984002A297C /* WONNX_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CC7022BF10984002A297C /* WONNX_iOSApp.swift */; };
+		F96CC7052BF10984002A297C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CC7042BF10984002A297C /* ContentView.swift */; };
+		F96CC7072BF10985002A297C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96CC7062BF10985002A297C /* Assets.xcassets */; };
+		F96CC70A2BF10985002A297C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96CC7092BF10985002A297C /* Preview Assets.xcassets */; };
+		F96CC7152BF109CC002A297C /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CC7142BF109CC002A297C /* Interpreter.swift */; };
+		F96CC7202BF114AA002A297C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CC71F2BF114AA002A297C /* ViewController.swift */; };
+		F96CC7232BF114D7002A297C /* CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CC7222BF114D7002A297C /* CVPixelBuffer.swift */; };
+		F96CC7262BF11553002A297C /* YoloxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CC7252BF11553002A297C /* YoloxViewController.swift */; };
+		F96CC7282BF1156A002A297C /* YoloxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CC7272BF1156A002A297C /* YoloxView.swift */; };
+		F96CC72A2BF1163A002A297C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CC7292BF1163A002A297C /* Data.swift */; };
+		F96CC72C2BF11651002A297C /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96CC72B2BF11651002A297C /* CGSize.swift */; };
+		F96CC72E2BF11EA8002A297C /* yolox_nano.onnx in Resources */ = {isa = PBXBuildFile; fileRef = F96CC72D2BF11EA8002A297C /* yolox_nano.onnx */; };
+		F96CC7352BF12010002A297C /* libWONNXMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F96CC7342BF12010002A297C /* libWONNXMobile.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F96CC6FF2BF10984002A297C /* WONNX-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WONNX-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F96CC7022BF10984002A297C /* WONNX_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WONNX_iOSApp.swift; sourceTree = "<group>"; };
+		F96CC7042BF10984002A297C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F96CC7062BF10985002A297C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F96CC7092BF10985002A297C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F96CC7142BF109CC002A297C /* Interpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
+		F96CC7162BF10AA9002A297C /* WONNXMobile-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WONNXMobile-Bridge-Header.h"; sourceTree = "<group>"; };
+		F96CC71A2BF10D8F002A297C /* c_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_interface.h; sourceTree = "<group>"; };
+		F96CC71F2BF114AA002A297C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F96CC7222BF114D7002A297C /* CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBuffer.swift; sourceTree = "<group>"; };
+		F96CC7252BF11553002A297C /* YoloxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoloxViewController.swift; sourceTree = "<group>"; };
+		F96CC7272BF1156A002A297C /* YoloxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoloxView.swift; sourceTree = "<group>"; };
+		F96CC7292BF1163A002A297C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		F96CC72B2BF11651002A297C /* CGSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		F96CC72D2BF11EA8002A297C /* yolox_nano.onnx */ = {isa = PBXFileReference; lastKnownFileType = file; name = yolox_nano.onnx; path = "../../wonnx-mobile/data/models/yolox_nano.onnx"; sourceTree = "<group>"; };
+		F96CC72F2BF11EE7002A297C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F96CC7342BF12010002A297C /* libWONNXMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWONNXMobile.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F96CC6FC2BF10984002A297C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96CC7352BF12010002A297C /* libWONNXMobile.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F96CC6F62BF10984002A297C = {
+			isa = PBXGroup;
+			children = (
+				F96CC7012BF10984002A297C /* WONNX-iOS */,
+				F96CC7002BF10984002A297C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F96CC7002BF10984002A297C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F96CC6FF2BF10984002A297C /* WONNX-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F96CC7012BF10984002A297C /* WONNX-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F96CC7062BF10985002A297C /* Assets.xcassets */,
+				F96CC71A2BF10D8F002A297C /* c_interface.h */,
+				F96CC7042BF10984002A297C /* ContentView.swift */,
+				F96CC7212BF114C3002A297C /* Extentions */,
+				F96CC72F2BF11EE7002A297C /* Info.plist */,
+				F96CC7342BF12010002A297C /* libWONNXMobile.a */,
+				F96CC7082BF10985002A297C /* Preview Content */,
+				F96CC71D2BF11455002A297C /* Views */,
+				F96CC7022BF10984002A297C /* WONNX_iOSApp.swift */,
+				F96CC7162BF10AA9002A297C /* WONNXMobile-Bridge-Header.h */,
+				F96CC7132BF109B7002A297C /* WONNXSwift */,
+				F96CC72D2BF11EA8002A297C /* yolox_nano.onnx */,
+			);
+			path = "WONNX-iOS";
+			sourceTree = "<group>";
+		};
+		F96CC7082BF10985002A297C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F96CC7092BF10985002A297C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F96CC7132BF109B7002A297C /* WONNXSwift */ = {
+			isa = PBXGroup;
+			children = (
+				F96CC7142BF109CC002A297C /* Interpreter.swift */,
+			);
+			path = WONNXSwift;
+			sourceTree = "<group>";
+		};
+		F96CC71D2BF11455002A297C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F96CC7242BF114E0002A297C /* Yolox */,
+				F96CC71E2BF1149C002A297C /* Common */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F96CC71E2BF1149C002A297C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F96CC71F2BF114AA002A297C /* ViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F96CC7212BF114C3002A297C /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				F96CC7222BF114D7002A297C /* CVPixelBuffer.swift */,
+				F96CC7292BF1163A002A297C /* Data.swift */,
+				F96CC72B2BF11651002A297C /* CGSize.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		F96CC7242BF114E0002A297C /* Yolox */ = {
+			isa = PBXGroup;
+			children = (
+				F96CC7252BF11553002A297C /* YoloxViewController.swift */,
+				F96CC7272BF1156A002A297C /* YoloxView.swift */,
+			);
+			path = Yolox;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F96CC6FE2BF10984002A297C /* WONNX-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F96CC70D2BF10985002A297C /* Build configuration list for PBXNativeTarget "WONNX-iOS" */;
+			buildPhases = (
+				F96CC6FB2BF10984002A297C /* Sources */,
+				F96CC6FC2BF10984002A297C /* Frameworks */,
+				F96CC6FD2BF10984002A297C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WONNX-iOS";
+			productName = "WONNX-iOS";
+			productReference = F96CC6FF2BF10984002A297C /* WONNX-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F96CC6F72BF10984002A297C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					F96CC6FE2BF10984002A297C = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = F96CC6FA2BF10984002A297C /* Build configuration list for PBXProject "WONNX-iOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F96CC6F62BF10984002A297C;
+			productRefGroup = F96CC7002BF10984002A297C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F96CC6FE2BF10984002A297C /* WONNX-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F96CC6FD2BF10984002A297C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96CC70A2BF10985002A297C /* Preview Assets.xcassets in Resources */,
+				F96CC7072BF10985002A297C /* Assets.xcassets in Resources */,
+				F96CC72E2BF11EA8002A297C /* yolox_nano.onnx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F96CC6FB2BF10984002A297C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96CC7232BF114D7002A297C /* CVPixelBuffer.swift in Sources */,
+				F96CC7152BF109CC002A297C /* Interpreter.swift in Sources */,
+				F96CC7052BF10984002A297C /* ContentView.swift in Sources */,
+				F96CC7202BF114AA002A297C /* ViewController.swift in Sources */,
+				F96CC7282BF1156A002A297C /* YoloxView.swift in Sources */,
+				F96CC7262BF11553002A297C /* YoloxViewController.swift in Sources */,
+				F96CC7032BF10984002A297C /* WONNX_iOSApp.swift in Sources */,
+				F96CC72C2BF11651002A297C /* CGSize.swift in Sources */,
+				F96CC72A2BF1163A002A297C /* Data.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F96CC70B2BF10985002A297C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/$(PROJECT)";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/WONNXMobile-Bridge-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F96CC70C2BF10985002A297C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/$(PROJECT)";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/WONNXMobile-Bridge-Header.h";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F96CC70E2BF10985002A297C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WONNX-iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = DZ77T7JLGY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WONNX-iOS/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "For yolox detection";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/$(PROJECT)",
+					"$(PROJECT_DIR)/WONNX-iOS",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nefrock.WONNX-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F96CC70F2BF10985002A297C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WONNX-iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = DZ77T7JLGY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WONNX-iOS/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "For yolox detection";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/$(PROJECT)",
+					"$(PROJECT_DIR)/WONNX-iOS",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nefrock.WONNX-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F96CC6FA2BF10984002A297C /* Build configuration list for PBXProject "WONNX-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F96CC70B2BF10985002A297C /* Debug */,
+				F96CC70C2BF10985002A297C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F96CC70D2BF10985002A297C /* Build configuration list for PBXNativeTarget "WONNX-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F96CC70E2BF10985002A297C /* Debug */,
+				F96CC70F2BF10985002A297C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F96CC6F72BF10984002A297C /* Project object */;
+}

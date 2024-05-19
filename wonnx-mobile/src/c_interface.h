@@ -1,10 +1,13 @@
 #include <stdint.h>
 
-struct Array
+typedef struct
 {
     float *data;
-    int size;
-};
+    int len;
+    float preprocess_time;
+    float inference_time;
+    float post_process_time;
+} Array;
 
 int load_model(
     char *model_path,

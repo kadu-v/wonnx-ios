@@ -12,11 +12,17 @@ class Interpreter {
     var modelPath: String
     var InputShape: (Int, Int, Int, Int) // batch_size, channels, height, width
     var outputShape: (Int, Int, Int, Int) // batch_size, channels, height, width
+    var cocoLabels: [String]
 
-    init(modelPath: String, InputShape: (Int, Int, Int, Int), outputShape: (Int, Int, Int, Int)) {
+    init(modelPath: String,
+         InputShape: (Int, Int, Int, Int),
+         outputShape: (Int, Int, Int, Int),
+         labelPath: String)
+    {
         self.modelPath = modelPath
         self.InputShape = InputShape
         self.outputShape = outputShape
+        self.cocoLabels = try! String(contentsOfFile: labelPath).components(separatedBy: "\n")
     }
 
     func loadModel() {
@@ -39,20 +45,22 @@ class Interpreter {
         }
     }
 
-    func infer(pixelBuffer: CVPixelBuffer, modelInputRange: CGRect) -> [Float] {
+    func get_class(index: Int) -> String {
+        return cocoLabels[index]
+    }
+
+    func infer(pixelBuffer: CVPixelBuffer, modelInputRange: CGRect) -> ([Float], Float, Float, Float) {
         let preporcess_start = Date()
         guard var input = preprocess(pixelBuffer: pixelBuffer, modelInputRange: modelInputRange)
         else {
-            return []
+            return ([], 0.0, 0.0, 0.0)
         }
         let preprocess_end = Date()
-        print("preprocess: \(preprocess_end.timeIntervalSince(preporcess_start) * 1000)")
 
         let infer_start = Date()
         let len = input.count
         let preds = invoke(input: &input, len: len)
         let infer_end = Date()
-        print("infer: \(infer_end.timeIntervalSince(infer_start) * 1000)")
         return preds
     }
 
@@ -60,51 +68,39 @@ class Interpreter {
         let sourcePixelFormat = CVPixelBufferGetPixelFormatType(pixelBuffer)
         assert(sourcePixelFormat == kCVPixelFormatType_32BGRA)
 
+        // measure the input image size
+        var start = Date()
         let modelSize = CGSize(width: CGFloat(InputShape.3), height: CGFloat(InputShape.2))
         guard let thumbnail = pixelBuffer.resize(from: modelInputRange, to: modelSize)
         else {
             return nil
         }
+        var end = Date()
+        print("resize: \(end.timeIntervalSince(start) * 1000)")
 
         // Remove the alpha component from the image buffer to get the initialized `Data`.
+        start = Date()
         guard let rgbInput = thumbnail.rgbData()
         else {
             print("Failed to convert the image buffer to RGB data.")
             return nil
         }
+        end = Date()
+        print("rgbData: \(end.timeIntervalSince(start) * 1000)")
 
-        // convert to channel first format
-        return toChannelFirst(rgbInput)
+        return rgbInput
     }
 
-    func toChannelFirst(_ input: [Float]) -> [Float] {
-        let channels = InputShape.1
-        let height = InputShape.2
-        let width = InputShape.3
-        let batchSize = InputShape.0
-
-        var output = [Float](repeating: 0, count: input.count)
-        for b in 0..<batchSize {
-            for c in 0..<channels {
-                for h in 0..<height {
-                    for w in 0..<width {
-                        let index = b * channels * height * width + c * height * width + h * width + w
-                        let newIndex = b * channels * height * width + h * width * channels + w * channels + c
-                        output[newIndex] = input[index]
-                    }
-                }
-            }
-        }
-        return output
-    }
-
-    func invoke(input: inout [Float], len: Int) -> [Float] {
+    func invoke(input: inout [Float], len: Int) -> ([Float], Float, Float, Float) {
         let output = input.withUnsafeMutableBufferPointer { ptr in
             predict(ptr.baseAddress!, UInt32(len))
         }
 
-        let buffer = UnsafeBufferPointer(start: output.data, count: Int(output.size))
+        let buffer = UnsafeBufferPointer(start: output.data, count: Int(output.len))
         let preds = [Float](buffer)
-        return preds
+        let preprocessTime = output.preprocess_time
+        let inferTime = output.inference_time
+        let postprocessTime = output.post_process_time
+        return (preds, preprocessTime, inferTime, postprocessTime)
     }
 }

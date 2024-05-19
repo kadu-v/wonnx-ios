@@ -16,7 +16,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     private let captureSession = AVCaptureSession()
     private let sessionQueue = DispatchQueue(label: "sessionQueue")
     private lazy var videoOutput = AVCaptureVideoDataOutput()
-    var previewLayer = AVCaptureVideoPreviewLayer()
+    var previewLayer = AVCaptureVideoPreviewLayer() 
     var previewBounds: CGRect! = nil // for view dimensions
 
     public init() {

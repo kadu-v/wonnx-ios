@@ -11,7 +11,10 @@ static INTERPRETER: Lazy<Mutex<Interpreter>> =
 #[repr(C)]
 pub struct Array {
     pub data: *mut f32,
-    pub len: usize,
+    pub len: i32,
+    pub preprocess_time: f32,
+    pub inference_time: f32,
+    pub post_process_time: f32,
 }
 
 #[no_mangle]
@@ -40,8 +43,12 @@ pub extern "C" fn load_model(
         output_width,
     );
     let mut interp = INTERPRETER.lock().unwrap();
-    let Ok(_) = interp.load(model_path, input_shape, output_shape) else {
-        return -11;
+    let _ = match interp.load(model_path, input_shape, output_shape) {
+        Ok(_) => 0,
+        Err(e) => {
+            eprintln!("Error: {:?}", e);
+            return -11;
+        }
     };
     return 0;
 }
@@ -50,14 +57,26 @@ pub extern "C" fn load_model(
 pub extern "C" fn predict(data: *mut f32, len: usize) -> Array {
     let input = unsafe { std::slice::from_raw_parts(data, len) };
     let interp = INTERPRETER.lock().unwrap();
-    let Ok(mut output) = interp.predict(input) else {
+    let Ok((mut output, preprocess_time, inference_time, post_process_time)) =
+        interp.predict(input)
+    else {
         return Array {
             data: std::ptr::null_mut(),
             len: 0,
+            preprocess_time: 0.0,
+            inference_time: 0.0,
+            post_process_time: 0.0,
         };
     };
     let len = output.len();
     let data = output.as_mut_ptr();
     std::mem::forget(output); // unsafe: move ownership to caller
-    Array { data, len }
+
+    Array {
+        data,
+        len: len as i32,
+        preprocess_time,
+        inference_time,
+        post_process_time,
+    }
 }

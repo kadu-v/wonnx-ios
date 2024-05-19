@@ -11,7 +11,7 @@ This repository contains a simple iOS application that uses the WONNX crate to r
 ./build.sh
 ```
 
-2. Open the `WONNX-iOS.xcodeproj` file in Xcode and run the project on a device or simulator.
+2. Open the `WONNX-iOS.xcodeproj` file in Xcode and run the project on a device.
 
 3. Install the app to your device
 

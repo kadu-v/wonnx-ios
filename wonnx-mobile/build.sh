@@ -12,4 +12,4 @@ cp target/aarch64-apple-ios/release/libwonnx_mobile.a WONNXMobile/libwonnx_mobil
 cp src/c_interface.h WONNXMobile/c_interface.h
 
 # Copy Headers and Binary to iOS Project
-cp -r WONNXMobile/* ../ios/WONNX-iOS/WONNX-iOS
+cp -r WONNXMobile/* ../WONNX-iOS/WONNX-iOS

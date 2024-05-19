@@ -2,6 +2,7 @@
 name = "wonnx-mobile"
 version = "0.1.0"
 edition = "2021"
+license = "MIT OR Apache-2.0"
 
 [lib]
 crate-type = ["staticlib", "cdylib", "rlib"]
@@ -9,8 +10,7 @@ name = "wonnx_mobile"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-# wonnx = { git = "https://github.com/kadu-v/wonnx", branch = "dev/slice" }
-wonnx = { path = "../../wonnx/wonnx" }
+wonnx = { git = "https://github.com/kadu-v/wonnx", branch = "dev/slice" }
 futures = "*"
 once_cell = "*"
 

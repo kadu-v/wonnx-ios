@@ -50,17 +50,13 @@ class Interpreter {
     }
 
     func infer(pixelBuffer: CVPixelBuffer, modelInputRange: CGRect) -> ([Float], Float, Float, Float) {
-        let preporcess_start = Date()
         guard var input = preprocess(pixelBuffer: pixelBuffer, modelInputRange: modelInputRange)
         else {
             return ([], 0.0, 0.0, 0.0)
         }
-        let preprocess_end = Date()
 
-        let infer_start = Date()
         let len = input.count
         let preds = invoke(input: &input, len: len)
-        let infer_end = Date()
         return preds
     }
 
@@ -69,24 +65,18 @@ class Interpreter {
         assert(sourcePixelFormat == kCVPixelFormatType_32BGRA)
 
         // measure the input image size
-        var start = Date()
         let modelSize = CGSize(width: CGFloat(InputShape.3), height: CGFloat(InputShape.2))
         guard let thumbnail = pixelBuffer.resize(from: modelInputRange, to: modelSize)
         else {
             return nil
         }
-        var end = Date()
-        print("resize: \(end.timeIntervalSince(start) * 1000)")
 
         // Remove the alpha component from the image buffer to get the initialized `Data`.
-        start = Date()
         guard let rgbInput = thumbnail.rgbData()
         else {
             print("Failed to convert the image buffer to RGB data.")
             return nil
         }
-        end = Date()
-        print("rgbData: \(end.timeIntervalSince(start) * 1000)")
 
         return rgbInput
     }
